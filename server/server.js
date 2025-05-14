@@ -59,7 +59,7 @@ const connectionId = crypto.randomUUID();
  * - Network timeout settings
  * 
  * @param {Object} config Configuration object for AWS SDK
- * @property {string} region - AWS region for service endpoints (us-west-2)
+ * @property {string} region - AWS region for service endpoints (us-east-2)
  * @property {number} maxRetries - Maximum number of retry attempts for failed API calls
  * @property {Object} retryDelayOptions - Configuration for exponential backoff
  * @property {number} retryDelayOptions.base - Base delay in milliseconds between retries

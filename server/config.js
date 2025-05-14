@@ -86,7 +86,7 @@ module.exports = {
    * Update this to match your deployment region
    * @type {string}
    */
-  GAMELIFT_STREAMS_REGION: 'us-west-2',
+  GAMELIFT_STREAMS_REGION: 'us-east-2',
 
   /**
    * Optional endpoint override for Amazon GameLift Streams API

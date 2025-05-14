@@ -150,7 +150,7 @@ export class GLSInfrastructureStack extends cdk.Stack {
 
 
   Here is your Amazon GameLift Streams Share URL:                                                                                                                                                                    
-  ${apiUrl}?userId=Player1&applicationId=${applicationId}&location=us-west-2
+  ${apiUrl}?userId=Player1&applicationId=${applicationId}&location=us-east-2
   
   Add or update arguments to your URL to share your stream:                             
   ?userId={Add Player Name}&applicationId={Add Application ID}&location={Add AWS Region} 

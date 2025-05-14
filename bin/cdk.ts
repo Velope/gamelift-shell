@@ -18,5 +18,5 @@ if (!streamGroupId || !streamGroupId.match(/^sg-[a-zA-Z0-9]{5,}$/)) {
 new GLSInfrastructureStack(app, 'gameliftstreams-share-url-cdk', {
   streamGroupId: streamGroupId,
   applicationId: 'your-application-id',
-  awsRegion: 'us-west-2', // Replace with the desired AWS region
+  awsRegion: 'us-east-2', // Replace with the desired AWS region
 } as GLSInfrastructureStackProps);

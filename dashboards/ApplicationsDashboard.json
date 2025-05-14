@@ -6,11 +6,11 @@
             "inputType": "select",
             "id": "region",
             "label": "Region",
-            "defaultValue": "us-west-2",
+            "defaultValue": "us-east-2",
             "visible": true,
             "values": [
                 {
-                    "value": "us-west-2",
+                    "value": "us-east-2",
                     "label": "US West (Oregon)"
                 },
                 {
@@ -37,11 +37,11 @@
             "type": "metric",
             "properties": {
                 "metrics": [
-                    [ { "expression": "SEARCH('{AWS/GameLiftStreams,ApplicationId,StreamClass} MetricName=\"FrameCaptureRate\"', 'Average', 300)", "id": "e1", "period": 300, "region": "us-west-2" } ]
+                    [ { "expression": "SEARCH('{AWS/GameLiftStreams,ApplicationId,StreamClass} MetricName=\"FrameCaptureRate\"', 'Average', 300)", "id": "e1", "period": 300, "region": "us-east-2" } ]
                 ],
                 "view": "timeSeries",
                 "stacked": false,
-                "region": "us-west-2",
+                "region": "us-east-2",
                 "period": 300,
                 "stat": "Average",
                 "title": "Frame Capture Rate",
@@ -59,11 +59,11 @@
             "type": "metric",
             "properties": {
                 "metrics": [
-                    [ { "expression": "SEARCH('{AWS/GameLiftStreams,ApplicationId,StreamClass} MetricName=\"AudioCaptureRate\"', 'Average', 300)", "id": "e1", "period": 300, "region": "us-west-2" } ]
+                    [ { "expression": "SEARCH('{AWS/GameLiftStreams,ApplicationId,StreamClass} MetricName=\"AudioCaptureRate\"', 'Average', 300)", "id": "e1", "period": 300, "region": "us-east-2" } ]
                 ],
                 "view": "timeSeries",
                 "stacked": false,
-                "region": "us-west-2",
+                "region": "us-east-2",
                 "title": "Audio Capture Rate",
                 "period": 300,
                 "stat": "Sum",
@@ -80,11 +80,11 @@
             "type": "metric",
             "properties": {
                 "metrics": [
-                    [ { "expression": "SEARCH('{AWS/GameLiftStreams,ApplicationId,StreamClass} MetricName=\"MemoryUtilization\"', 'Average', 300)", "id": "e1", "period": 300, "region": "us-west-2" } ]
+                    [ { "expression": "SEARCH('{AWS/GameLiftStreams,ApplicationId,StreamClass} MetricName=\"MemoryUtilization\"', 'Average', 300)", "id": "e1", "period": 300, "region": "us-east-2" } ]
                 ],
                 "view": "timeSeries",
                 "stacked": true,
-                "region": "us-west-2",
+                "region": "us-east-2",
                 "title": "Memory Utilization",
                 "period": 300,
                 "stat": "Maximum",
@@ -101,11 +101,11 @@
             "type": "metric",
             "properties": {
                 "metrics": [
-                    [ { "expression": "SEARCH('{AWS/GameLiftStreams,ApplicationId,StreamClass} MetricName=\"CPUUtilization\"', 'Average', 300)", "id": "e1", "period": 300, "region": "us-west-2" } ]
+                    [ { "expression": "SEARCH('{AWS/GameLiftStreams,ApplicationId,StreamClass} MetricName=\"CPUUtilization\"', 'Average', 300)", "id": "e1", "period": 300, "region": "us-east-2" } ]
                 ],
                 "view": "timeSeries",
                 "stacked": true,
-                "region": "us-west-2",
+                "region": "us-east-2",
                 "period": 300,
                 "stat": "Maximum",
                 "title": "CPU Utilization",
@@ -122,11 +122,11 @@
             "type": "metric",
             "properties": {
                 "metrics": [
-                    [ { "expression": "SEARCH('{AWS/GameLiftStreams,ApplicationId,StreamClass} MetricName=\"SessionLength\"', 'Average', 300)", "id": "e1", "period": 300, "region": "us-west-2" } ]
+                    [ { "expression": "SEARCH('{AWS/GameLiftStreams,ApplicationId,StreamClass} MetricName=\"SessionLength\"', 'Average', 300)", "id": "e1", "period": 300, "region": "us-east-2" } ]
                 ],
                 "view": "timeSeries",
                 "stacked": true,
-                "region": "us-west-2",
+                "region": "us-east-2",
                 "period": 300,
                 "stat": "Sum",
                 "title": "Session Length",
@@ -143,11 +143,11 @@
             "type": "metric",
             "properties": {
                 "metrics": [
-                    [ { "expression": "SEARCH('{AWS/GameLiftStreams,ApplicationId,StreamClass} MetricName=\"RoundTripTime\"', 'Average', 300)", "id": "e1", "period": 300, "region": "us-west-2" } ]
+                    [ { "expression": "SEARCH('{AWS/GameLiftStreams,ApplicationId,StreamClass} MetricName=\"RoundTripTime\"', 'Average', 300)", "id": "e1", "period": 300, "region": "us-east-2" } ]
                 ],
                 "view": "timeSeries",
                 "stacked": true,
-                "region": "us-west-2",
+                "region": "us-east-2",
                 "period": 300,
                 "stat": "Sum",
                 "title": "Round Trip Time",
@@ -164,10 +164,10 @@
             "type": "metric",
             "properties": {
                 "metrics": [
-                    [ { "expression": "SEARCH('{AWS/GameLiftStreams,ApplicationId,StreamClass} MetricName=\"FrameCaptureRate\"', 'Average', 300)", "id": "e1", "period": 300, "region": "us-west-2" } ]
+                    [ { "expression": "SEARCH('{AWS/GameLiftStreams,ApplicationId,StreamClass} MetricName=\"FrameCaptureRate\"', 'Average', 300)", "id": "e1", "period": 300, "region": "us-east-2" } ]
                 ],
                 "view": "gauge",
-                "region": "us-west-2",
+                "region": "us-east-2",
                 "yAxis": {
                     "left": {
                         "min": 0,
@@ -196,7 +196,7 @@
                 ],
                 "sparkline": true,
                 "view": "singleValue",
-                "region": "us-west-2",
+                "region": "us-east-2",
                 "title": "CPU Average Utilization Average",
                 "period": 300,
                 "setPeriodToTimeRange": false,
@@ -212,10 +212,10 @@
             "type": "metric",
             "properties": {
                 "metrics": [
-                    [ { "expression": "SEARCH('{AWS/GameLiftStreams,ApplicationId,StreamClass} MetricName=\"MemoryUtilization\"', 'Average', 300)", "id": "e1", "period": 300, "region": "us-west-2" } ]
+                    [ { "expression": "SEARCH('{AWS/GameLiftStreams,ApplicationId,StreamClass} MetricName=\"MemoryUtilization\"', 'Average', 300)", "id": "e1", "period": 300, "region": "us-east-2" } ]
                 ],
                 "view": "singleValue",
-                "region": "us-west-2",
+                "region": "us-east-2",
                 "period": 300,
                 "setPeriodToTimeRange": false,
                 "sparkline": true,

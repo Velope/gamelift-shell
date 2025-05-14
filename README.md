@@ -18,7 +18,7 @@ Make sure you have the following prerequisites before continuing to the next ste
 Before using either component, you will need to obtain the latest Amazon GameLift Streams Web SDK and drop it into the project files. 
 
 1. Clone this repository to your computer.
-2. Download the latest [Web SDK bundle](https://gameliftstreams-public-website-assets.s3.us-west-2.amazonaws.com/AmazonGameLiftStreamsWebSDK-v1.0.0.zip) from the Amazon GameLift Streams.
+2. Download the latest [Web SDK bundle](https://gameliftstreams-public-website-assets.s3.us-east-2.amazonaws.com/AmazonGameLiftStreamsWebSDK-v1.0.0.zip) from the Amazon GameLift Streams.
 3. Unzip the bundle.
 4. Copy the `gameliftstreams-x.x.x.mjs` and `gameliftstreams-x.x.x.js` files into the `server/public` folder of this project (next to the other source files like `index.html`)
 
@@ -68,11 +68,11 @@ To deploy this AWS Cloud Development Kit (CDK) stack, you'll need some additiona
    For example:
    **Windows**:
    
-       set CDK_DEFAULT_REGION=us-west-2 deploy_cdk.bat
+       set CDK_DEFAULT_REGION=us-east-2 deploy_cdk.bat
    
    **Linux/OSX**:
    
-       export CDK_DEFAULT_REGION=us-west-2 ./deploy_cdk.sh
+       export CDK_DEFAULT_REGION=us-east-2 ./deploy_cdk.sh
 
 **Deploy and Install:**
 

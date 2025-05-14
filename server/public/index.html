@@ -111,9 +111,9 @@
         // Security: Configuration object with proper validation
         const config = {
           API_GATEWAY_URL: getApiGatewayUrlFromCurrentUrl(),
-          STREAM_GROUP_ID: '000000000',
-          APPLICATION_ID: '000000000',
-          AWS_REGION: 'us-west-2'
+          STREAM_GROUP_ID: 'sg-CQTa6tzp2',
+          APPLICATION_ID: 'a-aT07WZVHp',
+          AWS_REGION: 'us-east-2'
         };
 
         /**
@@ -321,8 +321,8 @@
                 document.getElementById('setupLocations').value = JSON.stringify([location]);
             } else {
                 // Set default value if no location in URL
-                document.getElementById('setupLocationsDisplay').value = 'us-west-2';
-                document.getElementById('setupLocations').value = '["us-west-2"]';
+                document.getElementById('setupLocationsDisplay').value = 'us-east-2';
+                document.getElementById('setupLocations').value = '["us-east-2"]';
             }
 
             // Then in your streaming initialization, use your original logic:
@@ -462,8 +462,8 @@
             });
 
             // Initialize with default value
-            displayInput.value = "us-west-2";
-            jsonInput.value = '["us-west-2"]';
+            displayInput.value = "us-east-2";
+            jsonInput.value = '["us-east-2"]';
 
         });
     </script>
@@ -498,11 +498,11 @@
                 <td>
                     <input type="text" 
                            id="setupLocationsDisplay" 
-                           placeholder="us-west-2"
-                           value="us-west-2">
+                           placeholder="us-east-2"
+                           value="us-east-2">
                     <input type="hidden" 
                            id="setupLocations" 
-                           value='["us-west-2"]'>
+                           value='["us-east-2"]'>
                 </td>
             </tr>            
             <tr><td>Microphone:</td><td><span id="setupMicCheck">disabled</span><button id="setupEnableMic" onclick="appEnableMic()">Enable</button></td></tr>

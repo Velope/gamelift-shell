@@ -18,7 +18,7 @@ function safeJSONParse(value, defaultValue) {
     if (!value || value.trim() === '') {
         // For locations, return default region if empty
         if (Array.isArray(defaultValue)) {
-            return ['us-west-2'];
+            return ['us-east-2'];
         }
         return defaultValue;
     }
@@ -42,7 +42,7 @@ function safeJSONParse(value, defaultValue) {
         console.error('JSON parsing error:', error);
         // For locations, return default region on error
         if (Array.isArray(defaultValue)) {
-            return ['us-west-2'];
+            return ['us-east-2'];
         }
         return defaultValue;
     }
