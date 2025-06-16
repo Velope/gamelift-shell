@@ -1,4 +1,3 @@
-
 /*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: MIT-0
@@ -193,7 +192,7 @@ const logger = {
 // Security headers
 app.use((req, res, next) => {
   res.setHeader('X-Content-Type-Options', 'nosniff');
-  res.setHeader('X-Frame-Options', 'DENY');
+  // res.setHeader('X-Frame-Options', 'DENY');
   res.setHeader('X-XSS-Protection', '1; mode=block');
   next();
 });
@@ -910,7 +909,6 @@ function getContentType(filePath) {
  * @route GET *
  * @param {object} req - Express request object
  * @param {object} res - Express response object
- * @param {string} req.path - The requested URL path
  * @returns {void}
  * @throws {Error} May throw an error if file reading fails
  */

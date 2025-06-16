@@ -94,7 +94,7 @@
         // Set Stream Start Time
         window.streamStartTime = Date.now();
         // Set this to true for local development, false for deployed/Lambda
-        var IS_LOCAL = true;
+        var IS_LOCAL = false;
         
         
         // Security: Timeout and interval constants to prevent DoS
@@ -305,8 +305,8 @@
 
             // Use the URL parameters, if available
             const userId = sanitizeInput(urlParams.get('userId')) || 'Player1';
-            const streamGroupId = validateStreamIds(urlParams.get('streamGroupId')) || '';
-            const applicationId = validateStreamIds(urlParams.get('applicationId')) || '';
+            const streamGroupId = validateStreamIds(urlParams.get('streamGroupId')) || 'sg-5ZqiZxtzc';
+            const applicationId = validateStreamIds(urlParams.get('applicationId')) || 'a-aT07WZVHp';
             const location = sanitizeInput(urlParams.get('location'));
 
             // Set the form values
@@ -347,6 +347,11 @@
             const storedUserId = userId;
             const storedStreamGroupId = streamGroupId;
             const storedApplicationId = applicationId;
+
+            // if (appValidateSetup(IS_LOCAL)) {
+            //     appStartStreaming(IS_LOCAL);
+            // }   
+            console.warn(`#################################################################################################################################################################################################################################################################################################################################################`)
         }
 
         document.addEventListener('DOMContentLoaded', function() {
@@ -524,7 +529,9 @@
         <a href="#" onclick="document.getElementById('setupAdvanced').style.display = 'block'; return false">
             Show Advanced Settings
         </a>
-        <div id="setupClickToStart"><button id="clickToStartBtn" onclick="appValidateSetup(IS_LOCAL) && appStartStreaming(IS_LOCAL)">Click To Start</button></div>
+        <div id="setupClickToStart">
+            <button id="clickToStartBtn" onclick="appValidateSetup(IS_LOCAL) && appStartStreaming(IS_LOCAL)">Click To Start</button>
+        </div>
         <div id="setupValidationError"></div>
 
     </div>
