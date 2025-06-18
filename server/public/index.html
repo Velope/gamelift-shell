@@ -111,7 +111,7 @@
         // Security: Configuration object with proper validation
         const config = {
           API_GATEWAY_URL: getApiGatewayUrlFromCurrentUrl(),
-          STREAM_GROUP_ID: 'sg-CQTa6tzp2',
+          STREAM_GROUP_ID: 'sg-THHIZ5zRW',
           APPLICATION_ID: 'a-aT07WZVHp',
           AWS_REGION: 'us-east-2'
         };
@@ -305,7 +305,7 @@
 
             // Use the URL parameters, if available
             const userId = sanitizeInput(urlParams.get('userId')) || 'Player1';
-            const streamGroupId = validateStreamIds(urlParams.get('streamGroupId')) || 'sg-5ZqiZxtzc';
+            const streamGroupId = validateStreamIds(urlParams.get('streamGroupId')) || 'http://localhost:8081/#home';
             const applicationId = validateStreamIds(urlParams.get('applicationId')) || 'a-aT07WZVHp';
             const location = sanitizeInput(urlParams.get('location'));
 
@@ -343,15 +343,21 @@
                 }
             }
 
-            // Store values for later use
             const storedUserId = userId;
             const storedStreamGroupId = streamGroupId;
             const storedApplicationId = applicationId;
 
-            // if (appValidateSetup(IS_LOCAL)) {
-            //     appStartStreaming(IS_LOCAL);
-            // }   
-            console.warn(`#################################################################################################################################################################################################################################################################################################################################################`)
+            const sequence = ['ArrowUp', 'ArrowUp', 'ArrowUp', 'ArrowDown'];
+            let buffer = [];
+            window.addEventListener('keydown', function (e) {
+                buffer.push(e.key);
+                if (buffer.length > sequence.length) buffer.shift();
+                if (buffer.join(',') === sequence.join(',')) {
+                    console.log('exit');
+                    window.parent.postMessage('close', '*')
+                    buffer = [];
+                }
+            });
         }
 
         document.addEventListener('DOMContentLoaded', function() {
