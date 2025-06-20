@@ -62,7 +62,6 @@ async function appStartStreaming(isLocal) {
         // the asynchronous stream connection process is complete. Another valid
         // workaround would be to play a "Connecting..." video, as long as the
         // video also has an audio track - even a silent audio track will do.
-
         if (!handleOrientation()) {
             return;
         }

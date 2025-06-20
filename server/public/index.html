@@ -109,11 +109,14 @@
         const TOKEN_EXPIRY_TIME = 3600; // in seconds
 
         // Security: Configuration object with proper validation
+       const params =Object.fromEntries(new URLSearchParams(document.location.search))
+       console.warn(params)
+       console.warn(`#### streamgroup: ${params.streamGroupId}`)
         const config = {
           API_GATEWAY_URL: getApiGatewayUrlFromCurrentUrl(),
-          STREAM_GROUP_ID: 'sg-THHIZ5zRW',
-          APPLICATION_ID: 'a-aT07WZVHp',
-          AWS_REGION: 'us-east-2'
+          STREAM_GROUP_ID: params.streamGroupId,
+          APPLICATION_ID: params.applicationId,
+          AWS_REGION: params.location
         };
 
         /**
@@ -305,14 +308,17 @@
 
             // Use the URL parameters, if available
             const userId = sanitizeInput(urlParams.get('userId')) || 'Player1';
-            const streamGroupId = validateStreamIds(urlParams.get('streamGroupId')) || 'http://localhost:8081/#home';
-            const applicationId = validateStreamIds(urlParams.get('applicationId')) || 'a-aT07WZVHp';
+            const streamGroupId = validateStreamIds(urlParams.get('streamGroupId')) || '';
+            const applicationId = validateStreamIds(urlParams.get('applicationId')) || '';
+            console.warn(`##### streamGroupId: ${urlParams.get('streamGroupId')}`)
+            console.warn(`##### aplicationID: ${urlParams.get('applicationId')}`)
             const location = sanitizeInput(urlParams.get('location'));
 
             // Set the form values
             document.getElementById('setupUserId').value = userId;
             document.getElementById('setupStreamGroupId').value = streamGroupId;
             document.getElementById('setupApplicationId').value = applicationId;
+        
 
             // Handle locations setup
             if (location) {
@@ -333,7 +339,10 @@
             const setupContainer = document.getElementById('setupContainer');
             if (urlParams.has('userId') || urlParams.has('streamGroupId') || urlParams.has('applicationId')) {
                 appStartStreaming(IS_LOCAL);
-
+                // setTimeout(function(){
+                //             console.warn('### time',appToggleInput)
+                //             appToggleInput()},10000
+                //         )
                 if (checkIfMobile()) {
                     try {
                         initializeHamburgerMenu();
@@ -343,6 +352,7 @@
                 }
             }
 
+            // Store values for later use
             const storedUserId = userId;
             const storedStreamGroupId = streamGroupId;
             const storedApplicationId = applicationId;
@@ -357,7 +367,7 @@
                     window.parent.postMessage('close', '*')
                     buffer = [];
                 }
-            });
+            });  
         }
 
         document.addEventListener('DOMContentLoaded', function() {

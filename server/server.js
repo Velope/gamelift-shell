@@ -76,7 +76,7 @@ const connectionId = crypto.randomUUID();
  * Leave this here
  * @constant {boolean} IS_LOCAL - Determines if server is running in local development mode
  */
-const IS_LOCAL = true;
+const IS_LOCAL = false;
 
 /**
  * Declare server variables
@@ -491,10 +491,10 @@ app.post('/api/CreateStreamSession', function (req, res) {
     if (IS_LOCAL) {
         // In local mode, allow override from request body
         streamGroupId = req.body.StreamGroupId;
+        console.log(`##### ${streamGroupId}`)
     } else {
         // In Lambda mode, use the environment variable set during deployment
         streamGroupId = process.env.STREAM_GROUP_ID;
-        
         if (!streamGroupId) {
             console.error('STREAM_GROUP_ID environment variable not set');
             return res.status(500).json({
