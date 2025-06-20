@@ -339,10 +339,10 @@
             const setupContainer = document.getElementById('setupContainer');
             if (urlParams.has('userId') || urlParams.has('streamGroupId') || urlParams.has('applicationId')) {
                 appStartStreaming(IS_LOCAL);
-                // setTimeout(function(){
-                //             console.warn('### time',appToggleInput)
-                //             appToggleInput()},10000
-                //         )
+                setTimeout(function(){
+                            console.warn('### time',appToggleInput)
+                            appToggleInput()},10000
+                        )
                 if (checkIfMobile()) {
                     try {
                         initializeHamburgerMenu();
@@ -357,7 +357,7 @@
             const storedStreamGroupId = streamGroupId;
             const storedApplicationId = applicationId;
 
-            const sequence = ['ArrowUp', 'ArrowUp', 'ArrowUp', 'ArrowDown'];
+            const sequence = ['ArrowUp', 'ArrowUp', 'ArrowUp', 'ArrowDown', 'Enter'];
             let buffer = [];
             window.addEventListener('keydown', function (e) {
                 buffer.push(e.key);
@@ -592,9 +592,9 @@
         <canvas id="loadingScreenCanvas"></canvas>
     </div>
 
-    <!-- top-level panel -->
+    <!-- top-level panel  HIDE NAVBAR--> 
     <div id="appStreaming" style="display: none">
-        <div id="applicationDescription" class="app-description"></div>
+        <!-- <div id="applicationDescription" class="app-description"></div>
         
         <h1>
             <svg width="204" height="35" viewBox="0 0 204 35" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -610,9 +610,9 @@
                 </linearGradient>
                 </defs>
             </svg>
-        </h1>
+        </h1> -->
         <div id="bottom-banner-label">
-            <svg width="837" height="35" viewBox="0 0 837 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- <svg width="837" height="35" viewBox="0 0 837 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M1.34125 0.388242C1.00086 0.138159 0.590111 0.00231777 0.16791 3.77012e-05L832 0C834.761 0 837 2.23858 837 5V30C837 32.7614 834.761 35 832 35L0.181505 35C0.593797 34.9989 0.99572 34.8705 1.33224 34.6321L22.8064 19.4231C23.9198 18.6345 23.9341 16.9871 22.8346 16.1792L1.34125 0.388242Z" fill="url(#paint0_linear_7746_111379)" fill-opacity="0.15"/>
                 <defs>
                 <linearGradient id="paint0_linear_7746_111379" x1="226" y1="27.9999" x2="695.5" y2="25.4999" gradientUnits="userSpaceOnUse">
@@ -620,9 +620,9 @@
                 <stop offset="1" stop-opacity="0"/>
                 </linearGradient>
                 </defs>
-                </svg>                
+                </svg>                 -->
             </div>
-            <div id="streamControls">
+            <!-- <div id="streamControls">
                 <button id="streamingToggleInput" onclick="appToggleInput()">
                     <svg class="default-svg" width="140" height="34" viewBox="0 0 140 34" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="1" y="1" width="138" height="32" rx="9" stroke="white" stroke-opacity="0.5" stroke-width="2"/>
@@ -696,7 +696,7 @@
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M94.0906 14.344L92.817 13.0487L87.0533 18.7149L81.3864 12.9519L80.0911 14.2254L87.0315 21.2844L94.0906 14.344Z" fill="#424650"/>
                     </svg>
                   </button>             
-            </div>
+            </div> -->
 
             <!-- Add/Remove Widget Charts panel -->
             <div id="widgetMenuOptions" class="widget-menu-options" style="display: none">
@@ -824,7 +824,7 @@
             <div id="hamburgerMenu" class="hamburger-menu" style="display: none">☰</div>
             <div id="widgetsContainer"></div>
             <div id="virtualControlsContainer"></div>
-            <div id="streamFullscreenOverlay">&nbsp;<!-- important for :fullscreen CSS --></div>
+            <div id="streamFullscreenOverlay">&nbsp;</div>
             <video id="streamVideoElement" autoplay playsinline disablepictureinpicture></video>
             <audio id="streamAudioElement" autoplay></audio>
         </div>
